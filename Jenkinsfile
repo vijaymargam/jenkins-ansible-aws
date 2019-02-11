@@ -33,7 +33,9 @@ pipeline {
     stage('DeployArtifact') {
       steps {
         node('Ansible'){
-        ansiblePlaybook become: true, credentialsId: 'windows', installation: 'Anisble', inventory: '/tmp/hosts_product', playbook: '$WORKSPACE/deployArtifact.yaml'
+        sh 'mvn clean package -DskipTests'
+       ansiblePlaybook become: true, colorized: true, credentialsId: 'windows', disableHostKeyChecking: true, inventory: '/tmp/hosts_product', playbook: 'deployArtifact.yaml'
+        
         }}
    }
 
