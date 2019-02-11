@@ -4,7 +4,7 @@ pipeline {
     string(name: 'EUREKA_IPADDRESS', description: 'localhost')
   }
   tools { 
-        maven 'Maven'
+        maven 'maven'
   }
   stages {
     stage('Clone repository') {
