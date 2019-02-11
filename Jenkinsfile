@@ -24,6 +24,7 @@ pipeline {
     stage('CreateInstance') {
       steps {
         node('Ansible'){
+          checkout scm
         //ansiblePlaybook credentialsId: 'ab13a9b0-7986-420a-af3f-3048a2288ffd', installation: 'Anisble', playbook: '$WORKSPACE/createInstance.yaml'
         
         ansiblePlaybook playbook: '$WORKSPACE/createInstance.yaml'
