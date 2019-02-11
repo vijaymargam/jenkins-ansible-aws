@@ -10,7 +10,7 @@
     -
       name: "install Java JRE rpm from a local file"
       yum:
-        name: "*java*1.8*"
+        name: "java-1.8.0*"
         state: present
     -
       copy:
